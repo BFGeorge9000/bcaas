@@ -23,8 +23,10 @@ app.get('/', function(request, response){
   response.json(benewho);
 });
 
-app.listen(3000, function(){
-  console.log('Server started on Port 3000. Listening...');
+var listenPort = process.env.PORT || 3000
+
+app.listen(listenPort, function(){
+  console.log('Server started on Port ' + listenPort + '. Listening...');
 });
 
 // Utility functions
