@@ -62,6 +62,6 @@ function completeOrSplit(nameSet){
 }
 
 function randomFrom(dataSet){
-  return dataSet[Math.floor((Math.random() * dataSet.length) + 1)];
+  return dataSet[Math.floor(Math.random() * dataSet.length)];
 }
 
