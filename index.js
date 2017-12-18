@@ -42,8 +42,9 @@ function timesSeen(){
 }
 
 function normalizeSplits(dataSet){
-  // This gives the "split" names a better chance of bring chosen in completeOrSplit() 
+  // This gives the "split" names a better chance of being chosen in completeOrSplit() 
   var splitCount = dataSet.splits.front.length + dataSet.splits.back.length
+  
   for(i = 0; i < splitCount; i++){
     dataSet.completes.push("split");    
   }
@@ -58,7 +59,7 @@ function completeOrSplit(nameSet){
   return name;
 }
 
-function randomFrom(array){
-  return array[Math.floor((Math.random() * array.length) + 1)];
+function randomFrom(dataSet){
+  return dataSet[Math.floor((Math.random() * dataSet.length) + 1)];
 }
 
