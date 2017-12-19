@@ -4,15 +4,15 @@ first:
     - benedryl
     - benefit
     - benefits
-    - "Bendy - Straw"
+    - "Bendy-Straw"
     - bodysnatch
-    - "burnt sienna"
+    - "Burnt Sienna"
     - buffalo
     - contradict
     - derelict
     - etiquette
     - feminist
-    - "Fiddy - Cent"
+    - "Fiddy-Cent"
     - impressionist
     - medalist
     - megabit
@@ -30,11 +30,9 @@ first:
       - bendy
       - body
       - bumble
-      - fiddy
       - henna
       - queeny
       - teeny
-      - weenie
     back:
       - addict
       - bricked
@@ -54,10 +52,10 @@ last:
   completes:
     - cumberbund
     - cumbersome
-    - "Vegetable - Patch"
-    - "Spinach - Patch"
-    - "Lumbar - Support"
-    - "Lumber - Yard"
+    - "Vegetable-Patch"
+    - "Spinach-Patch"
+    - "Lumbar-Support"
+    - "Lumber-Yard"
   splits:
     front:
       - amber

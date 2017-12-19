@@ -38,11 +38,22 @@ mongo.connect(process.env.MONGODB_URI, function(err, client) {
             console.log(err);
           }
 
+          // TODO: Research this. Sometimes Mongo returns an empty set, despite successfully
+          // inserting the newName document in the line above this block. Possible race condition?
+          // This if/else is a temporary workaround to protect.
+          if(sightings.length > 0){
+            var timesSeen = sightings.length;
+            var firstSeenOn = sightings[0].last_seen_on;
+          }else{
+            var timesSeen = 1;
+            var firstSeenOn = newName.last_seen_on;
+          }
+
           var nameSummary = {
             'first_name': newName.first_name,
             'last_name': newName.last_name,
-            'times_seen': sightings.length,
-            'first_seen_on': sightings[0].last_seen_on,
+            'times_seen': timesSeen,
+            'first_seen_on': firstSeenOn,
             'last_seen_on': newName.last_seen_on
             
           }
@@ -76,11 +87,11 @@ mongo.connect(process.env.MONGODB_URI, function(err, client) {
   }
 
   function completeOrSplit(nameSet){
-    var name = randomFrom(nameSet["completes"]);
+    var name = randomFrom(nameSet.completes);
     if(name == "split"){
-      name = randomFrom(nameSet["splits"]["front"]) + "-" + randomFrom(nameSet["splits"]["back"]);
+      name = randomFrom(nameSet.splits.front) + "-" + randomFrom(nameSet.splits.back);
     }
-    return name;
+    return name[0].toUpperCase() + name.substring(1);
   }
 
   function randomFrom(dataSet){
