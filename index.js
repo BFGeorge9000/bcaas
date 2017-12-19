@@ -76,11 +76,11 @@ mongo.connect(process.env.MONGODB_URI, function(err, client) {
   }
 
   function completeOrSplit(nameSet){
-    var name = randomFrom(nameSet["completes"]);
+    var name = randomFrom(nameSet.completes);
     if(name == "split"){
-      name = randomFrom(nameSet["splits"]["front"]) + "-" + randomFrom(nameSet["splits"]["back"]);
+      name = randomFrom(nameSet.splits.front) + "-" + randomFrom(nameSet.splits.back);
     }
-    return name;
+    return name[0].toUpperCase() + name.substring(1);
   }
 
   function randomFrom(dataSet){
